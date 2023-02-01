@@ -1,14 +1,16 @@
 import { View, Text, Pressable } from 'react-native'
 import React, {useState} from 'react'
+import { NavigationContainer, useNavigation } from '@react-navigation/native'
 
 import styles from './styles'
 
 const Clients = () => {
 
   const [clients, setClients] = useState(0)
+  const navigation = useNavigation()
 
   return (
-    <View>
+    <View style={{justifyContent: 'space-between', height: '100%'}}>
       <View style={styles.row}>
         <View>
           <Text style={{fontWeight: 'bold'}}>Adults</Text>
@@ -30,6 +32,23 @@ const Clients = () => {
           </Pressable>
         </View>
       </View>
+
+      <Pressable 
+        style={{
+          marginBottom: 20, 
+          backgroundColor: '#f15454', 
+          alignItems: 'center',
+          justifyContent: 'center',
+          height: 50,
+          marginHorizontal: 20,
+          borderRadius: 10  
+        }}
+        
+        onPress={() => navigation.navigate('')}
+      >
+        <Text>Search</Text>
+      </Pressable>
+        
     </View>
   )
 }
