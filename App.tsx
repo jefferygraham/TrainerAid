@@ -12,6 +12,8 @@ import {
 } from 'react-native';
 
 import HomeScreen  from './src/screens/Home';
+import SearchResults from './src/screens/SearchResults';
+
 import Trainer from './src/components/Trainer';
 import feed from './assets/data/feed'
 
@@ -23,7 +25,7 @@ function App(): JSX.Element {
 
   return (
     <SafeAreaView>
-     <Trainer trainer={trainer1} />
+     <SearchResults />
    
     </SafeAreaView>
   );
