@@ -13,6 +13,7 @@ import {
 } from 'react-native';
 
 import HomeScreen  from './src/screens/Home';
+import Trainer from './src/components/Trainer';
 
 function App(): JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
@@ -20,7 +21,7 @@ function App(): JSX.Element {
 
   return (
     <SafeAreaView>
-     <HomeScreen />
+     <Trainer />
     </SafeAreaView>
   );
 }
