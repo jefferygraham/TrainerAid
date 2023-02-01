@@ -6,7 +6,6 @@
  */
 
 import React from 'react';
-import type {PropsWithChildren} from 'react';
 import {
   SafeAreaView,
   useColorScheme,
@@ -14,6 +13,9 @@ import {
 
 import HomeScreen  from './src/screens/Home';
 import Trainer from './src/components/Trainer';
+import feed from './assets/data/feed'
+
+const trainer1 = feed[0]
 
 function App(): JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
@@ -21,7 +23,8 @@ function App(): JSX.Element {
 
   return (
     <SafeAreaView>
-     <Trainer />
+     <Trainer trainer={trainer1} />
+   
     </SafeAreaView>
   );
 }
