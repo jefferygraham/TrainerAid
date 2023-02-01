@@ -13,6 +13,7 @@ import {
 
 import HomeScreen  from './src/screens/Home';
 import SearchResults from './src/screens/SearchResults';
+import LocationSearch from './src/screens/LocationSearch';
 
 import Trainer from './src/components/Trainer';
 import feed from './assets/data/feed'
@@ -25,7 +26,7 @@ function App(): JSX.Element {
 
   return (
     <SafeAreaView>
-     <SearchResults />
+     <LocationSearch />
    
     </SafeAreaView>
   );
