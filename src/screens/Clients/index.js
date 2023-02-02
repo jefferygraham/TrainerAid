@@ -1,6 +1,6 @@
 import { View, Text, Pressable } from 'react-native'
 import React, {useState} from 'react'
-import { NavigationContainer, useNavigation } from '@react-navigation/native'
+import { useNavigation } from '@react-navigation/native'
 
 import styles from './styles'
 
@@ -34,6 +34,13 @@ const Clients = () => {
       </View>
 
       <Pressable 
+        onPress={() => navigation.navigate('Home', {
+          screen: 'Explore',
+          params: {
+            screen: 'SearchResults'
+          }
+        })}
+
         style={{
           marginBottom: 20, 
           backgroundColor: '#f15454', 
@@ -43,8 +50,6 @@ const Clients = () => {
           marginHorizontal: 20,
           borderRadius: 10  
         }}
-        
-        onPress={() => navigation.navigate('')}
       >
         <Text>Search</Text>
       </Pressable>
