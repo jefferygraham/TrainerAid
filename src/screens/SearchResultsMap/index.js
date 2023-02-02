@@ -1,4 +1,4 @@
-import { View, Text } from 'react-native'
+import { View, FlatList, useWindowDimensions } from 'react-native'
 import React, {useState} from 'react'
 import MapView from 'react-native-maps'
 
@@ -9,6 +9,7 @@ import TrainerCarouselItem from '../../components/TrainerCarouselItem'
 const SearchResultsMap = () => {
 
   const [selectedPlaceId, setSelectedPlaceId] = useState(null)
+  const width = useWindowDimensions().width
 
   return (
     <View style={{width: '100%', height: '100%'}}>
@@ -31,8 +32,16 @@ const SearchResultsMap = () => {
           )}
       </MapView>
 
-      <View style={{position: 'absolute', bottom: 40}}>
-            <TrainerCarouselItem trainer={places[0]} />
+      <View style={{position: 'absolute', bottom: 10}}>
+            <FlatList 
+              data={places}
+              renderItem={({item}) => <TrainerCarouselItem trainer={item} />}
+              horizontal
+              showsHorizontalScrollIndicator={false}
+              snapToInterval={width - 60}
+              snapToAlignment={'center'}
+              decelerationRate={'fast'}
+            />
       </View>
     </View>
   )
