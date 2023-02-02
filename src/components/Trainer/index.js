@@ -12,7 +12,7 @@ const Trainer = (props) => {
     const navigation = useNavigation()
 
     const goToTrainerPage = () => {
-        navigation.navigate('TrainerInfo', { trainerId: trainer.id})
+        navigation.navigate('Trainer', { trainerId: trainer.id})
     }
 
     return (

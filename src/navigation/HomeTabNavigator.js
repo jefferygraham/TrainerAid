@@ -3,6 +3,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import Fontisto from 'react-native-vector-icons/Fontisto'
 import FontAwesome from 'react-native-vector-icons/FontAwesome'
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5'
+import Ionicons from 'react-native-vector-icons/Ionicons'
 import Feather from 'react-native-vector-icons/Feather'
 import EvilIcons from 'react-native-vector-icons/EvilIcons'
 
@@ -37,11 +38,11 @@ const HomeTabNavigator = () => {
             }}
         />
         <Tab.Screen 
-            name={"Trainer"}
+            name={"Sessions"}
             component={HomeScreen}
             options={{
                 tabBarIcon: ({color}) => (
-                    <FontAwesome5 name="airbnb" size={25} color={color} />
+                    <Ionicons name="ios-barbell-outline" size={25} color={color} />
                 )
             }}
         />

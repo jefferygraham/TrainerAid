@@ -35,7 +35,7 @@ const Router = (props) => {
                 }}
             />
             <Stack.Screen 
-                name={"TrainerInfo"} 
+                name={"Trainer"} 
                 component={TrainerScreen}
                 options={{
                     title: "Trainer"
