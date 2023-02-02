@@ -1,16 +1,24 @@
 import React from "react";
-import {View, Image, Text, useWindowDimensions } from 'react-native'
+import {View, Image, Text, useWindowDimensions, Pressable } from 'react-native'
+import { useNavigation } from "@react-navigation/native";
 
 import styles from "./styles"
-
 
 const TrainerCarouselItem = (props) => {
 
     const trainer = props.trainer;
     const width = useWindowDimensions().width
+    const navigation = useNavigation()
+
+    const goToTrainerPage = () => {
+        navigation.navigate('TrainerInfo', { trainerId: trainer.id})
+    }
 
     return (
-        <View style={[styles.container, { width: width - 60}]}>
+        <Pressable 
+            style={[styles.container, { width: width - 60}]}
+            onPress={goToTrainerPage}
+        >
             <View style={styles.innerContainer}>
                 <Image source={ {uri: trainer.image}} style={styles.image} />
                 
@@ -25,7 +33,7 @@ const TrainerCarouselItem = (props) => {
                     </Text>
                 </View>
             </View>
-        </View>
+        </Pressable>
     )
 }
 

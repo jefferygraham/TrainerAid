@@ -9,6 +9,7 @@ import EvilIcons from 'react-native-vector-icons/EvilIcons'
 import HomeScreen from '../screens/Home'
 import ExploreNavigator from './ExploreNavigator'
 import SearchResultsMap from '../screens/SearchResultsMap'
+import TrainerScreen from '../screens/TrainerScreen'
 
 const Tab = createBottomTabNavigator()
 
@@ -19,8 +20,7 @@ const HomeTabNavigator = () => {
     }}>
         <Tab.Screen 
             name={"Explore"}
-            // component={ExploreNavigator}
-            component={SearchResultsMap}
+            component={ExploreNavigator}
             options={{
                 tabBarIcon: ({color}) => (
                     <Fontisto name="search" size={25} color={color} />

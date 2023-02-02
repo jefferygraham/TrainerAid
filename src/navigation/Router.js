@@ -5,6 +5,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import HomeTabNavigator from './HomeTabNavigator';
 import LocationSearch from '../screens/LocationSearch';
 import Clients from '../screens/Clients';
+import TrainerScreen from '../screens/TrainerScreen';
 
 const Stack = createStackNavigator()
 
@@ -31,6 +32,13 @@ const Router = (props) => {
                 component={Clients}
                 options={{
                     title: "How many people?"
+                }}
+            />
+            <Stack.Screen 
+                name={"TrainerInfo"} 
+                component={TrainerScreen}
+                options={{
+                    title: "Trainer"
                 }}
             />
         </Stack.Navigator>
