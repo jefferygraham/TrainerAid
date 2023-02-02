@@ -4,6 +4,7 @@ import MapView from 'react-native-maps'
 
 import CustomerMarker from '../../components/CustomMarker'
 import places from '../../../assets/data/feed'
+import TrainerCarouselItem from '../../components/TrainerCarouselItem'
 
 const SearchResultsMap = () => {
 
@@ -29,6 +30,10 @@ const SearchResultsMap = () => {
             />)
           )}
       </MapView>
+
+      <View style={{position: 'absolute', bottom: 40}}>
+            <TrainerCarouselItem trainer={places[0]} />
+      </View>
     </View>
   )
 }
