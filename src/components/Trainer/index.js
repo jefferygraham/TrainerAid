@@ -30,7 +30,6 @@ const Trainer = (props) => {
                 <Text style={styles.salesPrice}>${trainer.salesPrice} </Text>
                  / session
             </Text>
-            <Text style={styles.totalPrice}>${trainer.totalPrice} Total</Text>
         </Pressable>
     )
 }

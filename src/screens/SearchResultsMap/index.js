@@ -1,14 +1,17 @@
 import { View, FlatList, useWindowDimensions } from 'react-native'
 import React, {useEffect, useState, useRef} from 'react'
 import MapView from 'react-native-maps'
+import {API, graphqlOperation} from 'aws-amplify'
 
+import {listTrainers} from "../../graphql/queries"
 import CustomerMarker from '../../components/CustomMarker'
-import places from '../../../assets/data/feed'
 import TrainerCarouselItem from '../../components/TrainerCarouselItem'
 
 const SearchResultsMap = () => {
 
   const [selectedPlaceId, setSelectedPlaceId] = useState(null)
+  const [trainers, setTrainers] = useState([])
+
   const width = useWindowDimensions().width
 
   const flatlist = useRef()
@@ -22,16 +25,31 @@ const SearchResultsMap = () => {
   })
 
   useEffect(() => {
+    const fetchTrainers = async () => {
+      try {
+        const trainersResult = await API.graphql(
+          graphqlOperation(listTrainers)
+        )
+        setTrainers(trainersResult.data.listTrainers.items)
+      } catch (error) {
+        console.log(error)
+      }
+    }
+
+    fetchTrainers()
+  }, [])
+
+  useEffect(() => {
     if (!selectedPlaceId || !flatlist) {
       return
     }
-    const index = places.findIndex(place => place.id === selectedPlaceId)
+    const index = trainers.findIndex(place => place.id === selectedPlaceId)
     flatlist.current.scrollToIndex({index})
 
-    const selectedPlace = places[index]
+    const selectedPlace = trainers[index]
     const region = {
-      latitude: selectedPlace.coordinate.latitude,
-      longitude: selectedPlace.coordinate.longitude,
+      latitude: selectedPlace.latitude,
+      longitude: selectedPlace.longitude,
       latitudeDelta: 0.8,
       longitudeDelta: 0.8
     }
@@ -52,9 +70,9 @@ const SearchResultsMap = () => {
           longitudeDelta: 0.8,
         }}
       >
-          {places.map(place => (
+          {trainers.map(place => (
             <CustomerMarker 
-              coordinate={place.coordinate} 
+              coordinate={{latitude: place.latitude, longitude: place.longitude}} 
               price={place.salesPrice} 
               isSelected={place.id === selectedPlaceId}
               onPress={() => setSelectedPlaceId(place.id)}
@@ -65,7 +83,7 @@ const SearchResultsMap = () => {
       <View style={{position: 'absolute', bottom: 10}}>
             <FlatList 
               ref={flatlist}
-              data={places}
+              data={trainers}
               renderItem={({item}) => <TrainerCarouselItem trainer={item} />}
               horizontal
               showsHorizontalScrollIndicator={false}
