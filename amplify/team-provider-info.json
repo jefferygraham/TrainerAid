@@ -1,0 +1,15 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-traineraid-dev-112418-authRole",
+      "UnauthRoleArn": "arn:aws:iam::394845364062:role/amplify-traineraid-dev-112418-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::394845364062:role/amplify-traineraid-dev-112418-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-traineraid-dev-112418-deployment",
+      "UnauthRoleName": "amplify-traineraid-dev-112418-unauthRole",
+      "StackName": "amplify-traineraid-dev-112418",
+      "StackId": "arn:aws:cloudformation:us-east-1:394845364062:stack/amplify-traineraid-dev-112418/0b414bb0-a316-11ed-b6ee-0a7e60f3489d",
+      "AmplifyAppId": "d307g9z07ttc0l"
+    }
+  }
+}
