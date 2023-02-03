@@ -11,7 +11,7 @@ const TrainerCarouselItem = (props) => {
     const navigation = useNavigation()
 
     const goToTrainerPage = () => {
-        navigation.navigate('Trainer', { trainerId: trainer.id})
+        navigation.navigate('Trainer', { trainer: trainer})
     }
 
     return (
