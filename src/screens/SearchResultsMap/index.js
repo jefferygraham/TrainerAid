@@ -7,10 +7,11 @@ import {listTrainers} from "../../graphql/queries"
 import CustomerMarker from '../../components/CustomMarker'
 import TrainerCarouselItem from '../../components/TrainerCarouselItem'
 
-const SearchResultsMap = () => {
+const SearchResultsMap = (props) => {
+
+  const {trainers} = props
 
   const [selectedPlaceId, setSelectedPlaceId] = useState(null)
-  const [trainers, setTrainers] = useState([])
 
   const width = useWindowDimensions().width
 
@@ -23,21 +24,6 @@ const SearchResultsMap = () => {
       setSelectedPlaceId(selectedPlace.id)
     }
   })
-
-  useEffect(() => {
-    const fetchTrainers = async () => {
-      try {
-        const trainersResult = await API.graphql(
-          graphqlOperation(listTrainers)
-        )
-        setTrainers(trainersResult.data.listTrainers.items)
-      } catch (error) {
-        console.log(error)
-      }
-    }
-
-    fetchTrainers()
-  }, [])
 
   useEffect(() => {
     if (!selectedPlaceId || !flatlist) {

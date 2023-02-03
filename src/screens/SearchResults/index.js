@@ -7,22 +7,7 @@ import Trainer from '../../components/Trainer'
 
 const SearchResults = (props) => {
 
-  const [trainers, setTrainers] = useState([])
-
-  useEffect(() => {
-    const fetchTrainers = async () => {
-      try {
-        const trainersResult = await API.graphql(
-          graphqlOperation(listTrainers)
-        )
-        setTrainers(trainersResult.data.listTrainers.items)
-      } catch (error) {
-        console.log(error)
-      }
-    }
-
-    fetchTrainers()
-  }, [])
+  const {trainers} = props
 
     return (
       <View>

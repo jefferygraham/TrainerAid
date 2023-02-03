@@ -1,6 +1,6 @@
 import { TextInput, View, FlatList, Text, Pressable } from 'react-native'
 import React, {useState} from 'react'
-import { useNavigation } from '@react-navigation/native'
+import { useNavigation, } from '@react-navigation/native'
 import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete';
 
 import styles from './styles'
@@ -18,7 +18,7 @@ const LocationSearch = (props) => {
             onPress={(data, details = null) => {
                 // 'details' is provided when fetchDetails = true
                 console.log(data, details);
-                navigation.navigate("Clients")
+                navigation.navigate("Clients", {viewport: details.geometry.viewport})
             }}
             query={{
                 key: 'AIzaSyAzqsyTffjCXDaYQhvnScPPorJfyoHnjas',

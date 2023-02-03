@@ -1,6 +1,6 @@
 import { View, Text, Pressable } from 'react-native'
 import React, {useState} from 'react'
-import { useNavigation } from '@react-navigation/native'
+import { useNavigation, useRoute } from '@react-navigation/native'
 
 import styles from './styles'
 
@@ -8,6 +8,7 @@ const Clients = () => {
 
   const [clients, setClients] = useState(0)
   const navigation = useNavigation()
+  const route = useRoute()
 
   return (
     <View style={{justifyContent: 'space-between', height: '100%'}}>
@@ -37,7 +38,10 @@ const Clients = () => {
         onPress={() => navigation.navigate('Home', {
           screen: 'Explore',
           params: {
-            screen: 'SearchResults'
+            screen: 'SearchResults',
+            params: {
+              viewport: route.params.viewport
+            }
           }
         })}
 
