@@ -13,7 +13,7 @@ const HomeScreen = (props) => {
     return (
         <View>
             <Pressable style={styles.searchButton} onPress={() => navigation.navigate('Location Search')}>
-                <Fontisto name='search' size={25} color={"#f15454"} />
+                <Fontisto name='search' size={25} color={"#fc4801"} />
                 <Text style={styles.searchButtonText}>Search for a trainer</Text>
             </Pressable>
 

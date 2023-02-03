@@ -42,9 +42,9 @@ const SearchResultsTabNavigator = () => {
 
   return (
     <Tab.Navigator screenOptions={{
-        tabBarActiveTintColor: '#f15454',
+        tabBarActiveColor: '#fc4801',
         tabBarIndicatorStyle: {
-            backgroundColor: '#f15454'
+            backgroundColor: '#fc4801'
         }
     }}>
         <Tab.Screen name={'list'}>

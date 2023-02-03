@@ -47,7 +47,7 @@ const Clients = () => {
 
         style={{
           marginBottom: 20, 
-          backgroundColor: '#f15454', 
+          backgroundColor: '#fc4801', 
           alignItems: 'center',
           justifyContent: 'center',
           height: 50,
