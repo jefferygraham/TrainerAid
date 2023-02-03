@@ -17,11 +17,8 @@ const HomeScreen = (props) => {
                 <Text style={styles.searchButtonText}>Search for a trainer</Text>
             </Pressable>
 
-            <ImageBackground source={require('../../../assets/images/wallpaper.jpg')} style={styles.image}>
-                <Text style={styles.title}>Get Trained Your Way</Text>
-                <Pressable style={styles.button} onPress={() => console.warn('Explore Btn Clicked!')}>
-                    <Text style={styles.buttonText}>Search nearby trainers</Text>
-                </Pressable>
+            <ImageBackground source={require('../../../assets/images/wallpaper.png')} style={styles.image}>
+               
             </ImageBackground>
         </View>
     )
