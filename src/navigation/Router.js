@@ -6,6 +6,7 @@ import HomeTabNavigator from './HomeTabNavigator';
 import LocationSearch from '../screens/LocationSearch';
 import Clients from '../screens/Clients';
 import TrainerScreen from '../screens/TrainerScreen';
+import Appointments from '../screens/Appointments';
 
 const Stack = createStackNavigator()
 
@@ -13,7 +14,7 @@ const Router = (props) => {
   return (
     <NavigationContainer>
         <Stack.Navigator>
-            <Stack.Screen 
+            {/* <Stack.Screen 
                 name={"Home"} 
                 component={HomeTabNavigator}
                 options={{
@@ -39,6 +40,13 @@ const Router = (props) => {
                 component={TrainerScreen}
                 options={{
                     title: "Trainer"
+                }}
+            /> */}
+            <Stack.Screen 
+                name={"Appointments"} 
+                component={Appointments}
+                options={{
+                    title: "Appointments"
                 }}
             />
         </Stack.Navigator>
