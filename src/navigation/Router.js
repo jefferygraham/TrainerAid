@@ -7,6 +7,7 @@ import LocationSearch from '../screens/LocationSearch';
 import Clients from '../screens/Clients';
 import TrainerScreen from '../screens/TrainerScreen';
 import Appointments from '../screens/Appointments';
+import Confirmation from '../screens/Confimation';
 
 const Stack = createStackNavigator()
 
@@ -47,6 +48,13 @@ const Router = (props) => {
                 component={Appointments}
                 options={{
                     title: "Appointments"
+                }}
+            />
+            <Stack.Screen 
+                name={"Confirmation"} 
+                component={Confirmation}
+                options={{
+                    title: "Confirmation"
                 }}
             />
         </Stack.Navigator>
