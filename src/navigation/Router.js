@@ -14,7 +14,7 @@ const Router = (props) => {
   return (
     <NavigationContainer>
         <Stack.Navigator>
-            {/* <Stack.Screen 
+            <Stack.Screen 
                 name={"Home"} 
                 component={HomeTabNavigator}
                 options={{
@@ -41,7 +41,7 @@ const Router = (props) => {
                 options={{
                     title: "Trainer"
                 }}
-            /> */}
+            />
             <Stack.Screen 
                 name={"Appointments"} 
                 component={Appointments}
