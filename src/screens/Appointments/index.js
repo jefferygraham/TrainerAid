@@ -33,11 +33,19 @@ const slots = [
   '7:00 PM',
 ];
 
+const options = {
+  weekday: "long",
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+};
+
 const Appointments = ({ navigation }) => {
   const [state, setState] = useState({
     selectedSlot: slots[0],
     showSuccessDialog: false,
   });
+
 
   const updateState = (data) => setState((state) => ({ ...state, ...data }));
 
@@ -85,7 +93,10 @@ const Appointments = ({ navigation }) => {
       <TouchableOpacity
         activeOpacity={0.9}
         onPress={() => {
-          navigation.push('Confirmation');
+          navigation.push('Confirmation', {
+            date: new Date(this._calendar.getSelectedDate()).toLocaleDateString("en-US", options),
+            time: new Date(this._calendar.getSelectedDate()).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })
+          })
         }}
         style={styles.continueButtonStyle}
       >
@@ -157,17 +168,20 @@ const Appointments = ({ navigation }) => {
 
   function calender() {
     const datesBlacklistFunc = (date) => {
-      return date.isoWeekday() === 7;
+      return date.isoWeekday() === 8;
     };
-
     return (
       <CalendarStrip
+        ref={component => this._calendar = component}
         calendarAnimation={{ type: 'sequence', duration: 30 }}
         daySelectionAnimation={{
           type: 'background',
           duration: 200,
           highlightColor: Colors.primaryColor,
         }}
+        // onDateSelected={(date)=> {
+        //   setDate(date)
+        // }}
         style={{ height: 100, paddingTop: 20, paddingBottom: 10 }}
         calendarHeaderStyle={{
           color: Colors.blackColor,
