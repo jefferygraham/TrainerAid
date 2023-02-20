@@ -4,12 +4,10 @@ import { useRoute } from '@react-navigation/native';
 
 
 const Confirmation = (props) => {
-  const route = useRoute()
-  const {date, time} = route.params
-  
+
   return (
     <View>
-      <Text>You are conformed for {date} at {time}</Text>
+      <Text>Confirmation PAge</Text>
     </View>
   )
 }

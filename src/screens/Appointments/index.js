@@ -18,6 +18,8 @@ import { Colors, Sizes, Fonts } from '../../../constants/style';
 const { width } = Dimensions.get('window');
 
 const slots = [
+  '7:00 AM',
+  '8:00 AM',
   '9:00 AM',
   '10:00 AM',
   '11:00 AM',
@@ -83,7 +85,7 @@ const Appointments = ({ navigation }) => {
       <TouchableOpacity
         activeOpacity={0.9}
         onPress={() => {
-          navigation.push('SelectPaymentMethod');
+          navigation.push('Confirmation');
         }}
         style={styles.continueButtonStyle}
       >
