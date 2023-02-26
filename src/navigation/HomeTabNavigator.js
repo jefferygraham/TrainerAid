@@ -18,6 +18,15 @@ const HomeTabNavigator = () => {
         tabBarActiveTintColor: '#fc4801'
     }}>
         <Tab.Screen 
+            name={"MTA"}
+            component={HomeScreen}
+            options={{
+                tabBarIcon: ({color}) => (
+                    <FontAwesome name="heart-o" size={25} color={color} />
+                )
+            }}
+        />
+        <Tab.Screen 
             name={"Explore"}
             component={ExploreNavigator}
             options={{
@@ -26,15 +35,7 @@ const HomeTabNavigator = () => {
                 )
             }}
         />
-        <Tab.Screen 
-            name={"Saved"}
-            component={HomeScreen}
-            options={{
-                tabBarIcon: ({color}) => (
-                    <FontAwesome name="heart-o" size={25} color={color} />
-                )
-            }}
-        />
+        
         <Tab.Screen 
             name={"Sessions"}
             component={HomeScreen}

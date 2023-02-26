@@ -8,8 +8,8 @@ const Confirmation = (props) => {
   const {date, time} = route.params
   
   return (
-    <View>
-      <Text>You are confirmed for {date} at {time}</Text>
+    <View style={{backgroundColor: "#001E77", height: "100%"}}>
+      <Text style={{color:"white"}}>You are confirmed for {date} at {time}</Text>
     </View>
   )
 }
