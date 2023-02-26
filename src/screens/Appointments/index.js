@@ -95,7 +95,7 @@ const Appointments = ({ navigation }) => {
         onPress={() => {
           navigation.push('Confirmation', {
             date: new Date(this._calendar.getSelectedDate()).toLocaleDateString("en-US", options),
-            time: new Date(this._calendar.getSelectedDate()).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })
+            time: selectedSlot
           })
         }}
         style={styles.continueButtonStyle}
